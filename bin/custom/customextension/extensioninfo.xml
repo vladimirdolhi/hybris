@@ -17,8 +17,8 @@
       
         
         <!-- <requires-extension name="cms"/> -->
-                         
-      
+
+        <requires-extension name="yb2bacceleratorstorefront"/>
 
       
         
