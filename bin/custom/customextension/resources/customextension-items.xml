@@ -9,32 +9,75 @@
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
+	<collectiontypes>
+		<collectiontype code="MyIntList" elementtype="java.lang.Integer" type="list"/>
+	</collectiontypes>
+	
+	<enumtypes>
+		<enumtype code="MyStaticEnum">
+			<value code="value1"/>
+			<value code="value2"/>
+			<value code="value3"/>
+		</enumtype>
+		<enumtype code="MyDynamicEnum">
+			<value code="value1"/>
+			<value code="value2"/>
+			<value code="value3"/>
+		</enumtype>
+	</enumtypes>
+
+	<maptypes>
+		<maptype code="myMap" argumenttype="java.lang.String" returntype="localized:java.lang.String"/>
+	</maptypes>
+
+	<relations>
+		<relation code="OneToMany" localized="false">
+			<sourceElement type="MyItem1" qualifier="item1" cardinality="one"/>
+			<targetElement type="MyItem3" qualifier="item3" cardinality="many"/>
+		</relation>
+		<relation code="ManyToMany" localized="false">
+			<deployment table="item1_item3" typecode="14141"/>
+			<sourceElement type="MyItem1" qualifier="item1" cardinality="many"/>
+			<targetElement type="MyItem4" qualifier="item4" cardinality="many"/>
+		</relation>
+	</relations>
+
 	<itemtypes>
-<!--
-		<itemtype generate="true"
-		   code="MyProduct"
-		   jaloclass="org.training.jalo.MyProduct"
-		   extends="Product"
-		   autocreate="true"
-	   >
+		<itemtype code="MyItem1" autocreate="true" generate="true">
+			<deployment table="myItem1" typecode="24243"/>
 			<attributes>
-				<attribute qualifier="myExampleInitialStringField" type="java.lang.String">
-					<description>My Example Initial String Value</description>
-					<modifiers initial="true"/>
+				<attribute qualifier="name" type="java.lang.String">
 					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
-
-				<attribute qualifier="myExampleBooleanField" type="java.lang.Boolean">
-					<description>Example Initial Boolean Field</description>
-               <persistence type="property"/>
-				</attribute>
-
-				<attribute qualifier="media" type="Media">
-					<persistence type="property"/>
-				</attribute>
-
 			</attributes>
 		</itemtype>
--->
+		<itemtype code="MyItem2" autocreate="true" generate="true">
+			<deployment table="MyItem2" typecode="24244"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="MyItem3" autocreate="true" generate="true">
+			<deployment table="MyItem3" typecode="24245"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="MyItem4" autocreate="true" generate="true">
+			<deployment table="MyItem4" typecode="24246"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 </items>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 4, 2023, 2:39:47 PM                     ---
+ * --- Generated at Jun 8, 2023, 7:46:34 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -9,12 +9,22 @@ package org.training.jalo;
 import de.hybris.platform.directpersistence.annotation.SLDSafe;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSession;
+import de.hybris.platform.jalo.JaloSystemException;
+import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.extension.ExtensionManager;
+import de.hybris.platform.jalo.link.Link;
+import de.hybris.platform.jalo.type.ComposedType;
+import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.CustomextensionConstants;
+import org.training.jalo.MyItem1;
+import org.training.jalo.MyItem2;
+import org.training.jalo.MyItem3;
+import org.training.jalo.MyItem4;
 
 /**
  * Generated class for type <code>CustomextensionManager</code>.
@@ -39,6 +49,110 @@ public class CustomextensionManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public MyItem1 createMyItem1(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("MyItem1");
+			return (MyItem1)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating MyItem1 : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public MyItem1 createMyItem1(final Map attributeValues)
+	{
+		return createMyItem1( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public MyItem2 createMyItem2(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("MyItem2");
+			return (MyItem2)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating MyItem2 : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public MyItem2 createMyItem2(final Map attributeValues)
+	{
+		return createMyItem2( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public MyItem3 createMyItem3(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("MyItem3");
+			return (MyItem3)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating MyItem3 : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public MyItem3 createMyItem3(final Map attributeValues)
+	{
+		return createMyItem3( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public MyItem4 createMyItem4(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("MyItem4");
+			return (MyItem4)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating MyItem4 : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public MyItem4 createMyItem4(final Map attributeValues)
+	{
+		return createMyItem4( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public static final CustomextensionManager getInstance()
