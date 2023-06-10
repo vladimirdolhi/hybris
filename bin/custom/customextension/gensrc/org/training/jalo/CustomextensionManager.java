@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 8, 2023, 7:46:34 PM                     ---
+ * --- Generated at Jun 10, 2023, 1:53:48 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -21,6 +21,7 @@ import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.CustomextensionConstants;
+import org.training.jalo.ItemWithAllAttributes;
 import org.training.jalo.MyItem1;
 import org.training.jalo.MyItem2;
 import org.training.jalo.MyItem3;
@@ -49,6 +50,32 @@ public class CustomextensionManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public ItemWithAllAttributes createItemWithAllAttributes(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("ItemWithAllAttributes");
+			return (ItemWithAllAttributes)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating ItemWithAllAttributes : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public ItemWithAllAttributes createItemWithAllAttributes(final Map attributeValues)
+	{
+		return createItemWithAllAttributes( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public MyItem1 createMyItem1(final SessionContext ctx, final Map attributeValues)

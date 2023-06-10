@@ -27,7 +27,7 @@
 	</enumtypes>
 
 	<maptypes>
-		<maptype code="myMap" argumenttype="java.lang.String" returntype="localized:java.lang.String"/>
+		<maptype code="myMap" argumenttype="java.lang.String" returntype="java.lang.String"/>
 	</maptypes>
 
 	<relations>
@@ -36,9 +36,17 @@
 			<targetElement type="MyItem3" qualifier="item3" cardinality="many"/>
 		</relation>
 		<relation code="ManyToMany" localized="false">
-			<deployment table="item1_item3" typecode="14141"/>
+			<deployment table="item1_item4" typecode="14141"/>
 			<sourceElement type="MyItem1" qualifier="item1" cardinality="many"/>
 			<targetElement type="MyItem4" qualifier="item4" cardinality="many"/>
+		</relation>
+		<relation code="ItemWithAllAttributesRelation" localized="false">
+			<sourceElement type="ItemWithAllAttributes" qualifier="itemWithAllAttributes" cardinality="one">
+				<modifiers read="true" write="true" search="true" optional="true"/>
+			</sourceElement>
+			<targetElement type="MyItem3" qualifier="item3" cardinality="many">
+				<modifiers read="true" write="true" search="true" optional="true"/>
+			</targetElement>
 		</relation>
 	</relations>
 
@@ -53,7 +61,7 @@
 			</attributes>
 		</itemtype>
 		<itemtype code="MyItem2" autocreate="true" generate="true">
-			<deployment table="MyItem2" typecode="24244"/>
+			<deployment table="myItem2" typecode="24244"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
 					<persistence type="property"/>
@@ -62,7 +70,7 @@
 			</attributes>
 		</itemtype>
 		<itemtype code="MyItem3" autocreate="true" generate="true">
-			<deployment table="MyItem3" typecode="24245"/>
+			<deployment table="myItem3" typecode="24245"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
 					<persistence type="property"/>
@@ -71,11 +79,35 @@
 			</attributes>
 		</itemtype>
 		<itemtype code="MyItem4" autocreate="true" generate="true">
-			<deployment table="MyItem4" typecode="24246"/>
+			<deployment table="myItem4" typecode="24246"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
 					<persistence type="property"/>
 					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="ItemWithAllAttributes">
+			<deployment table="itemWithAllAttributes" typecode="24247"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="customEnumProperty" type="MyStaticEnum">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true"/>
+				</attribute>
+				<attribute qualifier="customMapAttribute" type="MyMap">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="customListAttribute" type="MyIntList">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="manyToMany" type="ManyToMany">
+					<persistence type="property"/>
 				</attribute>
 			</attributes>
 		</itemtype>
