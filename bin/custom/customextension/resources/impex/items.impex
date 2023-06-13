@@ -1,0 +1,14 @@
+INSERT_UPDATE myItem1; name[unique = true]
+                     ; item1name_1
+                     ; item1name_2
+                     ; item1name_3
+INSERT_UPDATE myItem4; name[unique = true]
+                     ; item4name_1
+                     ; item4name_2
+                     ; item4name_3
+INSERT_UPDATE manyTomany; source(name)[unique = true]; target(name)[unique = true];
+                        ; item1name_1                ; item4name_1
+                        ; item1name_2                ; item4name_2
+
+INSERT_UPDATE itemWithAllAttributes; name[unique = true]; customEnumProperty(code); customMapAttribute ; customListAttribute; manyToMany(source(name), target(name))
+                                   ; ItemName1          ; value1                  ; a->4,w->b          ; 1,23,4,56          ; item1name_1:item4name_1
