@@ -19,7 +19,7 @@
 			<value code="value2"/>
 			<value code="value3"/>
 		</enumtype>
-		<enumtype code="MyDynamicEnum">
+		<enumtype code="MyDynamicEnum" dynamic="true">
 			<value code="value1"/>
 			<value code="value2"/>
 			<value code="value3"/>
@@ -51,7 +51,7 @@
 	</relations>
 
 	<itemtypes>
-		<itemtype code="MyItem1" autocreate="true" generate="true">
+		<itemtype code="MyItem1" autocreate="true" generate="true" jaloclass="org.training.jalo.MyItem1">
 			<deployment table="myItem1" typecode="24243"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
@@ -60,7 +60,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
-		<itemtype code="MyItem2" autocreate="true" generate="true">
+		<itemtype code="MyItem2" autocreate="true" generate="true" jaloclass="org.training.jalo.MyItem2">
 			<deployment table="myItem2" typecode="24244"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
@@ -69,7 +69,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
-		<itemtype code="MyItem3" autocreate="true" generate="true">
+		<itemtype code="MyItem3" autocreate="true" generate="true" jaloclass="org.training.jalo.MyItem3">
 			<deployment table="myItem3" typecode="24245"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
@@ -78,7 +78,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
-		<itemtype code="MyItem4" autocreate="true" generate="true">
+		<itemtype code="MyItem4" autocreate="true" generate="true" jaloclass="org.training.jalo.MyItem4">
 			<deployment table="myItem4" typecode="24246"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
@@ -87,7 +87,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
-		<itemtype code="ItemWithAllAttributes">
+		<itemtype code="ItemWithAllAttributes" jaloclass="org.training.jalo.ItemWithAllAttributes">
 			<deployment table="itemWithAllAttributes" typecode="24247"/>
 			<attributes>
 				<attribute qualifier="name" type="java.lang.String">
