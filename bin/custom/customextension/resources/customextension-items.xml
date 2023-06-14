@@ -36,7 +36,7 @@
 			<targetElement type="MyItem3" qualifier="item3" cardinality="many"/>
 		</relation>
 		<relation code="ManyToMany" localized="false">
-			<deployment table="item1_item4" typecode="14141"/>
+			<deployment table="item1_item4" typecode="21211"/>
 			<sourceElement type="MyItem1" qualifier="item1" cardinality="many"/>
 			<targetElement type="MyItem4" qualifier="item4" cardinality="many"/>
 		</relation>
