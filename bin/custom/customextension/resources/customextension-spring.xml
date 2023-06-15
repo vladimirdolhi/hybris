@@ -86,5 +86,7 @@
     <bean id="contactRequestService"
           class="org.training.service.impl.DefaultContactRequestService"  >
     </bean>
-			
+    <bean id="contactRequestDao"
+          class="org.training.dao.impl.DefaultContactRequestDao"
+          parent="abstractItemDao"  />
 </beans>
