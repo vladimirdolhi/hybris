@@ -59,4 +59,9 @@
 
 	-->
 
+	<bean class = "org.training.data.ContactRequestData">
+		<property name = "message" type = "String" />
+		<property name = "sender" type = "String" />
+	</bean>
+
 </beans>

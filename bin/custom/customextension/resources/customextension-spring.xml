@@ -86,7 +86,15 @@
     <bean id="contactRequestService"
           class="org.training.service.impl.DefaultContactRequestService"  >
     </bean>
+
     <bean id="contactRequestDao"
           class="org.training.dao.impl.DefaultContactRequestDao"
           parent="abstractItemDao"  />
+
+    <bean id="contactRequestFacade"
+          class="org.training.facade.impl.DefaultContactRequestFacade"/>
+
+
+    <bean id="contactRequestConverter" class="org.training.converters.ContactRequestConverter"/>
+
 </beans>
