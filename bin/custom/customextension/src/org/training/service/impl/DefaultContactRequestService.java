@@ -2,9 +2,6 @@ package org.training.service.impl;
 
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
-import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
-import de.hybris.platform.servicelayer.search.FlexibleSearchService;
-import de.hybris.platform.servicelayer.search.SearchResult;
 import org.training.dao.ContactRequestDao;
 import org.training.model.ContactRequestModel;
 import org.training.service.ContactRequestService;
@@ -36,4 +33,9 @@ public class DefaultContactRequestService implements ContactRequestService {
         }
         return result.iterator().next();
     }
+
+    public void setContactRequestDao(ContactRequestDao contactRequestDao) {
+        this.contactRequestDao = contactRequestDao;
+    }
+
 }

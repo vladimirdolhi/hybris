@@ -98,4 +98,16 @@
 
     <bean id="customDynamicAttributeHandler" class="org.training.attributehandlers.CustomDynamicAttributeHandler"/>
 
+    <bean id="itemWithAllAttributesService"
+          class="org.training.service.impl.DefaultItemWithAllAttributesService"  />
+
+    <bean id="itemWithAllAttributesDao"
+          class="org.training.dao.impl.DefaultItemWithAllAttributesDao"
+          parent="abstractItemDao"  />
+
+    <bean id="itemWithAllAttributesFacade"
+          class="org.training.facade.impl.DefaultItemWithAllAttributesFacade"/>
+
+    <bean id="itemWithAllAttributesConverter" class="org.training.converters.ItemWithAllAttributesConverter"/>
+
 </beans>
