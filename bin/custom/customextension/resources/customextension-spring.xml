@@ -94,7 +94,8 @@
     <bean id="contactRequestFacade"
           class="org.training.facade.impl.DefaultContactRequestFacade"/>
 
-
     <bean id="contactRequestConverter" class="org.training.converters.ContactRequestConverter"/>
+
+    <bean id="customDynamicAttributeHandler" class="org.training.attributehandlers.CustomDynamicAttributeHandler"/>
 
 </beans>

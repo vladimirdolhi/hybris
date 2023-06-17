@@ -58,6 +58,9 @@
 					<persistence type="property"/>
 					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
+				<attribute qualifier="dynamicAttribute" type="java.lang.String">
+					<persistence type="dynamic" attributeHandler="customDynamicAttributeHandler"/>
+				</attribute>
 			</attributes>
 		</itemtype>
 		<itemtype code="MyItem2" autocreate="true" generate="true" jaloclass="org.training.jalo.MyItem2">
