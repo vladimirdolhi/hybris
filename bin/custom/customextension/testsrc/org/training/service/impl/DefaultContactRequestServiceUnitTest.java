@@ -21,13 +21,13 @@ public class DefaultContactRequestServiceUnitTest {
     private ContactRequestModel contactRequestModel;
     private static final String MESSAGE = "HELLO";
     private static final String SENDER = "Tester";
-    private static final String NOT_EXISTING_SENDER = "Tester";
+    private static final String NOT_EXISTING_SENDER = "Not_existing_Tester";
 
 
     @Before
     public void setUp()
     {
-        contactRequestDao= mock(ContactRequestDao.class);
+        contactRequestDao = mock(ContactRequestDao.class);
         contactRequestService = new DefaultContactRequestService();
         contactRequestService.setContactRequestDao(contactRequestDao);
         contactRequestModel = new ContactRequestModel();

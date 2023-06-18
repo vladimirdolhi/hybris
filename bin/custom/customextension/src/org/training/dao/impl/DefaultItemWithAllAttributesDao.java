@@ -21,9 +21,9 @@ public class DefaultItemWithAllAttributesDao extends AbstractItemDao implements 
 
     @Override
     public List<ItemWithAllAttributesModel> findItemsByName(String name) {
-        final String queryString = //
-                "SELECT {p:" + ItemWithAllAttributesModel.PK + "}" //
-                        + "FROM {" + ItemWithAllAttributesModel._TYPECODE + " AS p} "//
+        final String queryString =
+                "SELECT {p:" + ItemWithAllAttributesModel.PK + "}"
+                        + "FROM {" + ItemWithAllAttributesModel._TYPECODE + " AS p} "
                         + "WHERE " + "{p:" + ItemWithAllAttributesModel.NAME + "}=?code ";
         final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
         query.addQueryParameter("code", name);

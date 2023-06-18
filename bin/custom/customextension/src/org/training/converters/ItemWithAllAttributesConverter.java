@@ -5,7 +5,7 @@ import de.hybris.platform.servicelayer.dto.converter.Converter;
 import org.training.data.ItemWithAllAttributesData;
 import org.training.model.ItemWithAllAttributesModel;
 
-public class ItemWithAllAttributesConverter  implements Converter<ItemWithAllAttributesModel, ItemWithAllAttributesData> {
+public class ItemWithAllAttributesConverter implements Converter<ItemWithAllAttributesModel, ItemWithAllAttributesData> {
     @Override
     public ItemWithAllAttributesData convert(ItemWithAllAttributesModel itemWithAllAttributesModel) throws ConversionException {
         return convert(itemWithAllAttributesModel, new ItemWithAllAttributesData());

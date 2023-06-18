@@ -38,4 +38,8 @@ public class DefaultItemWithAllAttributesService implements ItemWithAllAttribute
         }
         return result.iterator().next();
     }
+
+    public void setItemWithAllAttributesDao(ItemWithAllAttributesDao itemWithAllAttributesDao) {
+        this.itemWithAllAttributesDao = itemWithAllAttributesDao;
+    }
 }
