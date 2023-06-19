@@ -53,8 +53,8 @@ public class DefaultItemWithAllAttributesServiceIntegrationTest extends Servicel
             Thread.sleep(TimeUnit.SECONDS.toMillis(1));
         } catch (InterruptedException exc) {}
 
-        itemModel1 = new ItemWithAllAttributesModel();
-        itemModel2 = new ItemWithAllAttributesModel();
+        itemModel1 = modelService.create(ItemWithAllAttributesModel.class);
+        itemModel2 = modelService.create(ItemWithAllAttributesModel.class);
 
         itemModel1.setName(TEST_NAME_1);
         itemModel1.setCustomEnumProperty(TEST_ENUM_VALUE_1);

@@ -40,7 +40,7 @@ public class ContactRequestController {
     @PostMapping
     public String sendMessage(@RequestParam(required = false) String newSender,
                               @RequestParam(required = false) String newMessage) {
-        ContactRequestModel contactRequest = new ContactRequestModel();
+        ContactRequestModel contactRequest = modelService.create(ContactRequestModel.class);
         modelService.attach(contactRequest);
         if (newSender != null) {
             contactRequest.setSender(newSender);

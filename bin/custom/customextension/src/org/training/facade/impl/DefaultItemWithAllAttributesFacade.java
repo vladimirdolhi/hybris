@@ -7,8 +7,8 @@ import org.training.model.ItemWithAllAttributesModel;
 import org.training.service.ItemWithAllAttributesService;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DefaultItemWithAllAttributesFacade implements ItemWithAllAttributesFacade {
 
@@ -25,10 +25,10 @@ public class DefaultItemWithAllAttributesFacade implements ItemWithAllAttributes
     @Override
     public List<ItemWithAllAttributesData> getAllItems() {
         List<ItemWithAllAttributesModel> itemModels = itemWithAllAttributesService.getItems();
-        List<ItemWithAllAttributesData> itemDataList = new ArrayList<>();
-        for(ItemWithAllAttributesModel model : itemModels){
-            itemDataList.add(itemWithAllAttributesConverter.convert(model));
-        }
+
+        List<ItemWithAllAttributesData> itemDataList = itemModels.stream()
+                .map(model -> itemWithAllAttributesConverter.convert(model)).collect(Collectors.toList());
+
         return itemDataList;
     }
 }
