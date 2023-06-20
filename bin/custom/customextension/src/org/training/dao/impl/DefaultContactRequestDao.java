@@ -9,18 +9,22 @@ import org.training.model.ContactRequestModel;
 import java.util.List;
 
 public class DefaultContactRequestDao extends AbstractItemDao implements ContactRequestDao {
-    @Override
-    public List<ContactRequestModel> findBySender(String sender) {
-        final String queryString = """
+
+    private static final String GET_CONTACT_REQUESTS_BY_SENDER_QUERY = """
             SELECT {ContactRequest.PK} FROM
             {
                 ContactRequest
             }
             WHERE {ContactRequest.SENDER} = ?sender
             """;
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+
+    @Override
+    public List<ContactRequestModel> findBySender(String sender) {
+
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(GET_CONTACT_REQUESTS_BY_SENDER_QUERY);
         query.addQueryParameter("sender", sender);
         final SearchResult<ContactRequestModel> result = flexibleSearchService.search(query);
+
         return result.getResult();
     }
 }

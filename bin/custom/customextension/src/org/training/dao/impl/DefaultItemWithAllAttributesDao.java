@@ -9,22 +9,13 @@ import java.util.List;
 
 public class DefaultItemWithAllAttributesDao extends AbstractItemDao implements ItemWithAllAttributesDao {
 
-    @Override
-    public List<ItemWithAllAttributesModel> findAllItems() {
-        final String queryString = """
+    private static final String GET_ALL_ITEMS_QUERY = """
             SELECT {ItemWithAllAttributes.PK} FROM
             {
                 ItemWithAllAttributes
             }
             """;
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-
-        return flexibleSearchService.<ItemWithAllAttributesModel> search(query).getResult();
-    }
-
-    @Override
-    public List<ItemWithAllAttributesModel> findItemsByName(String name) {
-        final String queryString = """
+    private static final String GET_ITEMS_BY_NAME_QUERY = """
             SELECT {ItemWithAllAttributes.PK} FROM
             {
                 ItemWithAllAttributes
@@ -32,8 +23,21 @@ public class DefaultItemWithAllAttributesDao extends AbstractItemDao implements 
             WHERE
             {name}=?code
             """;
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+
+    @Override
+    public List<ItemWithAllAttributesModel> findAllItems() {
+
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(GET_ALL_ITEMS_QUERY);
+
+        return flexibleSearchService.<ItemWithAllAttributesModel> search(query).getResult();
+    }
+
+    @Override
+    public List<ItemWithAllAttributesModel> findItemsByName(String name) {
+
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(GET_ITEMS_BY_NAME_QUERY);
         query.addQueryParameter("code", name);
+
         return flexibleSearchService.<ItemWithAllAttributesModel> search(query).getResult();
     }
 
