@@ -36,7 +36,7 @@
 			<targetElement type="MyItem3" qualifier="item3" cardinality="many"/>
 		</relation>
 		<relation code="ManyToMany" localized="false">
-			<deployment table="item1_item4" typecode="14141"/>
+			<deployment table="item1_item4" typecode="21211"/>
 			<sourceElement type="MyItem1" qualifier="item1" cardinality="many"/>
 			<targetElement type="MyItem4" qualifier="item4" cardinality="many"/>
 		</relation>
@@ -57,6 +57,9 @@
 				<attribute qualifier="name" type="java.lang.String">
 					<persistence type="property"/>
 					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="dynamicAttribute" type="java.lang.String">
+					<persistence type="dynamic" attributeHandler="customDynamicAttributeHandler"/>
 				</attribute>
 			</attributes>
 		</itemtype>
@@ -107,6 +110,25 @@
 					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
 				<attribute qualifier="manyToMany" type="ManyToMany">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype generate="true"
+				  code="ContactRequest"
+				  jaloclass="org.training.jalo.ContactRequest"
+				  extends="GenericItem"
+				  autocreate="true">
+			<deployment table="contactRequest" typecode="15151"/>
+			<attributes>
+				<attribute qualifier="message" type="java.lang.String">
+					<description>Message</description>
+					<modifiers initial="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="sender" type="java.lang.String">
+					<description>Sender</description>
+					<modifiers initial="true"/>
 					<persistence type="property"/>
 				</attribute>
 			</attributes>

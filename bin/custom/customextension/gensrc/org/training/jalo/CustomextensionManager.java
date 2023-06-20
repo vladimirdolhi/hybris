@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 13, 2023, 3:17:01 PM                    ---
+ * --- Generated at Jun 15, 2023, 8:45:29 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -21,6 +21,7 @@ import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.CustomextensionConstants;
+import org.training.jalo.ContactRequest;
 import org.training.jalo.ItemWithAllAttributes;
 import org.training.jalo.MyItem1;
 import org.training.jalo.MyItem2;
@@ -50,6 +51,32 @@ public class CustomextensionManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public ContactRequest createContactRequest(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("ContactRequest");
+			return (ContactRequest)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating ContactRequest : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public ContactRequest createContactRequest(final Map attributeValues)
+	{
+		return createContactRequest( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ItemWithAllAttributes createItemWithAllAttributes(final SessionContext ctx, final Map attributeValues)
