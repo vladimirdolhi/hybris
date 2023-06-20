@@ -110,4 +110,6 @@
 
     <bean id="itemWithAllAttributesConverter" class="org.training.converters.ItemWithAllAttributesConverter"/>
 
+    <bean id="contactRequestEventListener" class="org.training.events.ContactRequestListener" parent="abstractEventListener"/>
+
 </beans>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 15, 2023, 8:45:29 PM                    ---
+ * --- Generated at Jun 20, 2023, 8:50:34 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -24,6 +24,7 @@ public class GeneratedCustomextensionConstants
 		public static final String MYITEM3 = "MyItem3".intern();
 		public static final String MYITEM4 = "MyItem4".intern();
 		public static final String MYSTATICENUM = "MyStaticEnum".intern();
+		public static final String NEWS = "News".intern();
 	}
 	public static class Attributes
 	{
