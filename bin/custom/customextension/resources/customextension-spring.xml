@@ -112,4 +112,13 @@
 
     <bean id="contactRequestEventListener" class="org.training.events.ContactRequestListener" parent="abstractEventListener"/>
 
+    <bean id="contactRequestInterceptor" class="org.training.interceptors.ContactRequestInterceptor" />
+
+    <bean id="ContactRequestInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="contactRequestInterceptor" />
+        <property name="typeCode" value="ContactRequest" />
+    </bean>
+
+    <bean id="bandAlbumSalesEventListener" class="org.training.events.ContactRequestEventListener" parent="abstractEventListener" />
+
 </beans>
