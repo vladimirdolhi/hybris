@@ -48,8 +48,8 @@ public class ContactRequestInterceptor implements ValidateInterceptor, PrepareIn
     }
     private boolean hasMsgBecomeBig(final ContactRequestModel contactRequestModel, final InterceptorContext ctx)
     {
-        final int msgLenth = contactRequestModel.getMessage().length();
-        if (msgLenth >= BIG_MESSAGE_LENGTH)
+        final int msgLength = contactRequestModel.getMessage().length();
+        if (msgLength >= BIG_MESSAGE_LENGTH)
         {
             if (ctx.isNew(contactRequestModel))
             {
