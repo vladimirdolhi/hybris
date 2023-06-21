@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 20, 2023, 8:50:34 PM                    ---
+ * --- Generated at Jun 21, 2023, 10:55:53 PM                   ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.CustomextensionConstants;
 import org.training.jalo.ContactRequest;
+import org.training.jalo.CustomToken;
 import org.training.jalo.ItemWithAllAttributes;
 import org.training.jalo.MyItem1;
 import org.training.jalo.MyItem2;
@@ -78,6 +79,32 @@ public class CustomextensionManager extends Extension
 	public ContactRequest createContactRequest(final Map attributeValues)
 	{
 		return createContactRequest( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CustomToken createCustomToken(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("CustomToken");
+			return (CustomToken)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CustomToken : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomToken createCustomToken(final Map attributeValues)
+	{
+		return createCustomToken( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ItemWithAllAttributes createItemWithAllAttributes(final SessionContext ctx, final Map attributeValues)

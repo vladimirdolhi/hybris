@@ -121,4 +121,10 @@
 
     <bean id="bandAlbumSalesEventListener" class="org.training.events.ContactRequestEventListener" parent="abstractEventListener" />
 
+    <bean id="customTokenDao"
+          class="org.training.dao.impl.DefaultCustomTokenDao"
+          parent="abstractItemDao" />
+
+    <bean id="updateCustomTokenValueJob" class="org.training.job.UpdateCustomTokenValueJob" parent="abstractJobPerformable"/>
+
 </beans>

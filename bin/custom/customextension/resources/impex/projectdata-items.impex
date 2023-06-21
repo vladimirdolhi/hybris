@@ -9,3 +9,12 @@ INSERT_UPDATE manyTomany; source(name)[unique = true]; target(name)[unique = tru
 
 INSERT_UPDATE itemWithAllAttributes; name[unique = true]; customEnumProperty(code); customMapAttribute ; customListAttribute; manyToMany(source(name), target(name))
                                    ; projectItem          ; value2                  ; r->l,t->b          ; 1,1,1,1          ; project_item1_1:project_item4_1
+
+INSERT_UPDATE CustomToken; value[unique = true];
+                         ; c81d4e2e-bcf2-11e6-869b-7df92533d2db
+
+INSERT_UPDATE CronJob; code[unique = true];             job(code);                singleExecutable; sessionLanguage(isocode);
+                     ; updateCustomTokenValueCronJob ;  updateCustomTokenValueJob; false;           en
+
+INSERT_UPDATE Trigger; cronJob(code)[unique = true];   cronExpression;
+                     ; updateCustomTokenValueCronJob ; 0/30 * * * * ?

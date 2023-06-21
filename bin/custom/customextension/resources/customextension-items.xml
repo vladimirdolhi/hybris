@@ -150,5 +150,13 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+		<itemtype code="CustomToken">
+			<deployment table="CustomToken" typecode="30271"/>
+			<attributes>
+				<attribute qualifier="value" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 </items>
