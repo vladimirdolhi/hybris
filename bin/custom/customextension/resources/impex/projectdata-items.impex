@@ -1,5 +1,5 @@
-INSERT_UPDATE myItem1; name[unique = true]
-                     ; project_item1_1
+INSERT_UPDATE myItem1; name[unique = true]; description[lang = ru]; description[lang = en];
+                     ; project_item1_1    ; Описание товара       ; Item description
 
 INSERT_UPDATE myItem4; name[unique = true]
                      ; project_item4_1

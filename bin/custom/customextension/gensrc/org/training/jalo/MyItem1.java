@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 13, 2023, 3:17:01 PM                    ---
+ * --- Generated at Jun 22, 2023, 9:24:21 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -10,7 +10,10 @@ import de.hybris.platform.directpersistence.annotation.SLDSafe;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloInvalidParameterException;
 import de.hybris.platform.jalo.SessionContext;
+import de.hybris.platform.jalo.c2l.C2LManager;
+import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.TypeManager;
@@ -34,6 +37,8 @@ public class MyItem1 extends GenericItem
 {
 	/** Qualifier of the <code>MyItem1.name</code> attribute **/
 	public static final String NAME = "name";
+	/** Qualifier of the <code>MyItem1.description</code> attribute **/
+	public static final String DESCRIPTION = "description";
 	/** Qualifier of the <code>MyItem1.item3</code> attribute **/
 	public static final String ITEM3 = "item3";
 	/** Qualifier of the <code>MyItem1.item4</code> attribute **/
@@ -60,12 +65,97 @@ public class MyItem1 extends GenericItem
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put(NAME, AttributeMode.INITIAL);
+		tmp.put(DESCRIPTION, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
 	protected Map<String, AttributeMode> getDefaultAttributeModes()
 	{
 		return DEFAULT_INITIAL_ATTRIBUTES;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.description</code> attribute.
+	 * @return the description
+	 */
+	public String getDescription(final SessionContext ctx)
+	{
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("MyItem1.getDescription requires a session language", 0 );
+		}
+		return (String)getLocalizedProperty( ctx, "description".intern());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.description</code> attribute.
+	 * @return the description
+	 */
+	public String getDescription()
+	{
+		return getDescription( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.description</code> attribute. 
+	 * @return the localized description
+	 */
+	public Map<Language,String> getAllDescription(final SessionContext ctx)
+	{
+		return (Map<Language,String>)getAllLocalizedProperties(ctx,"description".intern(),C2LManager.getInstance().getAllLanguages());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.description</code> attribute. 
+	 * @return the localized description
+	 */
+	public Map<Language,String> getAllDescription()
+	{
+		return getAllDescription( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.description</code> attribute. 
+	 * @param value the description
+	 */
+	public void setDescription(final SessionContext ctx, final String value)
+	{
+		if ( ctx == null) 
+		{
+			throw new JaloInvalidParameterException( "ctx is null", 0 );
+		}
+		if( ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("MyItem1.setDescription requires a session language", 0 );
+		}
+		setLocalizedProperty(ctx, "description".intern(),value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.description</code> attribute. 
+	 * @param value the description
+	 */
+	public void setDescription(final String value)
+	{
+		setDescription( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.description</code> attribute. 
+	 * @param value the description
+	 */
+	public void setAllDescription(final SessionContext ctx, final Map<Language,String> value)
+	{
+		setAllLocalizedProperties(ctx,"description".intern(),value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.description</code> attribute. 
+	 * @param value the description
+	 */
+	public void setAllDescription(final Map<Language,String> value)
+	{
+		setAllDescription( getSession().getSessionContext(), value );
 	}
 	
 	/**

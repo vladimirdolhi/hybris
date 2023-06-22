@@ -58,6 +58,10 @@
 					<persistence type="property"/>
 					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
+				<attribute qualifier="description" type="localized:java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
 				<attribute qualifier="dynamicAttribute" type="java.lang.String">
 					<persistence type="dynamic" attributeHandler="customDynamicAttributeHandler"/>
 				</attribute>
