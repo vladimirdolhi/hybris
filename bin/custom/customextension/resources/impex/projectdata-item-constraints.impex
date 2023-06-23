@@ -1,0 +1,2 @@
+INSERT_UPDATE MinConstraint;id[unique=true];severity(code,itemtype(code));active;annotation;descriptor(enclosingType(code),qualifier);message[lang=ru];message[lang=en];value
+                           ;ItemQuantityMustNotBeNegative;ERROR:Severity;true;javax.validation.constraints.Min;MyItem1:quantity;Колчиство товара должно быть положительным;Item quantity must not be negative;0
