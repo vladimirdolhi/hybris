@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 21, 2023, 10:55:53 PM                   ---
+ * --- Generated at Jun 23, 2023, 4:01:43 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -29,6 +29,7 @@ import org.training.jalo.MyItem2;
 import org.training.jalo.MyItem3;
 import org.training.jalo.MyItem4;
 import org.training.jalo.News;
+import org.training.jalo.NotLoremIpsumConstraint;
 
 /**
  * Generated class for type <code>CustomextensionManager</code>.
@@ -261,6 +262,32 @@ public class CustomextensionManager extends Extension
 	public News createNews(final Map attributeValues)
 	{
 		return createNews( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("NotLoremIpsumConstraint");
+			return (NotLoremIpsumConstraint)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating NotLoremIpsumConstraint : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final Map attributeValues)
+	{
+		return createNotLoremIpsumConstraint( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public static final CustomextensionManager getInstance()

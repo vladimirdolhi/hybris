@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 22, 2023, 9:24:21 PM                    ---
+ * --- Generated at Jun 23, 2023, 4:01:43 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -39,6 +39,8 @@ public class MyItem1 extends GenericItem
 	public static final String NAME = "name";
 	/** Qualifier of the <code>MyItem1.description</code> attribute **/
 	public static final String DESCRIPTION = "description";
+	/** Qualifier of the <code>MyItem1.quantity</code> attribute **/
+	public static final String QUANTITY = "quantity";
 	/** Qualifier of the <code>MyItem1.item3</code> attribute **/
 	public static final String ITEM3 = "item3";
 	/** Qualifier of the <code>MyItem1.item4</code> attribute **/
@@ -66,6 +68,7 @@ public class MyItem1 extends GenericItem
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put(NAME, AttributeMode.INITIAL);
 		tmp.put(DESCRIPTION, AttributeMode.INITIAL);
+		tmp.put(QUANTITY, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -403,6 +406,79 @@ public class MyItem1 extends GenericItem
 	public void setName(final String value)
 	{
 		setName( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.quantity</code> attribute.
+	 * @return the quantity
+	 */
+	public Integer getQuantity(final SessionContext ctx)
+	{
+		return (Integer)getProperty( ctx, "quantity".intern());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.quantity</code> attribute.
+	 * @return the quantity
+	 */
+	public Integer getQuantity()
+	{
+		return getQuantity( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.quantity</code> attribute. 
+	 * @return the quantity
+	 */
+	public int getQuantityAsPrimitive(final SessionContext ctx)
+	{
+		Integer value = getQuantity( ctx );
+		return value != null ? value.intValue() : 0;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>MyItem1.quantity</code> attribute. 
+	 * @return the quantity
+	 */
+	public int getQuantityAsPrimitive()
+	{
+		return getQuantityAsPrimitive( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.quantity</code> attribute. 
+	 * @param value the quantity
+	 */
+	public void setQuantity(final SessionContext ctx, final Integer value)
+	{
+		setProperty(ctx, "quantity".intern(),value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.quantity</code> attribute. 
+	 * @param value the quantity
+	 */
+	public void setQuantity(final Integer value)
+	{
+		setQuantity( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.quantity</code> attribute. 
+	 * @param value the quantity
+	 */
+	public void setQuantity(final SessionContext ctx, final int value)
+	{
+		setQuantity( ctx,Integer.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>MyItem1.quantity</code> attribute. 
+	 * @param value the quantity
+	 */
+	public void setQuantity(final int value)
+	{
+		setQuantity( getSession().getSessionContext(), value );
 	}
 	
 }
