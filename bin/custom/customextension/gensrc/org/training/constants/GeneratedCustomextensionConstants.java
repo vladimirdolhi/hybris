@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 15, 2023, 8:45:29 PM                    ---
+ * --- Generated at Jun 23, 2023, 4:01:43 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -17,6 +17,7 @@ public class GeneratedCustomextensionConstants
 	public static class TC
 	{
 		public static final String CONTACTREQUEST = "ContactRequest".intern();
+		public static final String CUSTOMTOKEN = "CustomToken".intern();
 		public static final String ITEMWITHALLATTRIBUTES = "ItemWithAllAttributes".intern();
 		public static final String MYDYNAMICENUM = "MyDynamicEnum".intern();
 		public static final String MYITEM1 = "MyItem1".intern();
@@ -24,6 +25,8 @@ public class GeneratedCustomextensionConstants
 		public static final String MYITEM3 = "MyItem3".intern();
 		public static final String MYITEM4 = "MyItem4".intern();
 		public static final String MYSTATICENUM = "MyStaticEnum".intern();
+		public static final String NEWS = "News".intern();
+		public static final String NOTLOREMIPSUMCONSTRAINT = "NotLoremIpsumConstraint".intern();
 	}
 	public static class Attributes
 	{

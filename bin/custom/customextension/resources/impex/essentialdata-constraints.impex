@@ -1,0 +1,5 @@
+INSERT_UPDATE MinConstraint;id[unique=true];severity(code,itemtype(code));active;annotation;descriptor(enclosingType(code),qualifier);message[lang=en];value
+                           ;ItemQuantityMustNotBeNegative;ERROR:Severity;true;javax.validation.constraints.Min;MyItem1:quantity;Item quantity must not be negative;0
+
+INSERT_UPDATE NotLoremIpsumConstraint;id[unique=true];severity(code,itemtype(code));active;annotation;descriptor(enclosingType(code),qualifier);message[lang=en]
+                                     ;NotIpsum;ERROR:Severity;true;org.training.constraints.NotLoremIpsum;MyItem1:description;Item description should not be Lorem ipsum placeholder text;

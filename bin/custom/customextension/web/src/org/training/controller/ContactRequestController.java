@@ -42,7 +42,9 @@ public class ContactRequestController {
                               @RequestParam(required = false) String newMessage) {
         ContactRequestModel contactRequest = modelService.create(ContactRequestModel.class);
         modelService.attach(contactRequest);
-        if (newSender != null) {
+        if (newSender == null || newSender.isEmpty()){
+            contactRequest.setSender(contactRequestFacade.getDefaultSender());
+        } else {
             contactRequest.setSender(newSender);
         }
         if (newMessage != null) {

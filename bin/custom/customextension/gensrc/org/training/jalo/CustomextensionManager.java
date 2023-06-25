@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jun 15, 2023, 8:45:29 PM                    ---
+ * --- Generated at Jun 23, 2023, 4:01:43 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -22,11 +22,14 @@ import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.CustomextensionConstants;
 import org.training.jalo.ContactRequest;
+import org.training.jalo.CustomToken;
 import org.training.jalo.ItemWithAllAttributes;
 import org.training.jalo.MyItem1;
 import org.training.jalo.MyItem2;
 import org.training.jalo.MyItem3;
 import org.training.jalo.MyItem4;
+import org.training.jalo.News;
+import org.training.jalo.NotLoremIpsumConstraint;
 
 /**
  * Generated class for type <code>CustomextensionManager</code>.
@@ -77,6 +80,32 @@ public class CustomextensionManager extends Extension
 	public ContactRequest createContactRequest(final Map attributeValues)
 	{
 		return createContactRequest( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CustomToken createCustomToken(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("CustomToken");
+			return (CustomToken)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CustomToken : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomToken createCustomToken(final Map attributeValues)
+	{
+		return createCustomToken( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ItemWithAllAttributes createItemWithAllAttributes(final SessionContext ctx, final Map attributeValues)
@@ -207,6 +236,58 @@ public class CustomextensionManager extends Extension
 	public MyItem4 createMyItem4(final Map attributeValues)
 	{
 		return createMyItem4( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public News createNews(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("News");
+			return (News)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating News : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public News createNews(final Map attributeValues)
+	{
+		return createNews( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType("NotLoremIpsumConstraint");
+			return (NotLoremIpsumConstraint)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating NotLoremIpsumConstraint : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final Map attributeValues)
+	{
+		return createNotLoremIpsumConstraint( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public static final CustomextensionManager getInstance()

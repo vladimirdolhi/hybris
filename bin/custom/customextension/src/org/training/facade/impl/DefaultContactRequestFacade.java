@@ -21,4 +21,9 @@ public class DefaultContactRequestFacade implements ContactRequestFacade{
         ContactRequestData contactRequestData = contactRequestConverter.convert(contactRequestModel);
         return contactRequestData;
     }
+
+    @Override
+    public String getDefaultSender() {
+        return contactRequestService.getSenderByDefault();
+    }
 }

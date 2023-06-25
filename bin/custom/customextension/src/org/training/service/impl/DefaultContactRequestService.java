@@ -1,5 +1,6 @@
 package org.training.service.impl;
 
+import de.hybris.platform.servicelayer.config.ConfigurationService;
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import org.training.dao.ContactRequestDao;
@@ -11,8 +12,12 @@ import java.util.List;
 
 public class DefaultContactRequestService implements ContactRequestService {
 
+    private static final String DEFAULT_SENDER = "contactRequest.default.sender";
+
     @Resource
     private ContactRequestDao contactRequestDao;
+    @Resource
+    private ConfigurationService configurationService;
 
     @Override
     public ContactRequestModel getContactRequest(String sender) {
@@ -32,6 +37,11 @@ public class DefaultContactRequestService implements ContactRequestService {
             );
         }
         return result.iterator().next();
+    }
+
+    @Override
+    public String getSenderByDefault() {
+        return configurationService.getConfiguration().getString(DEFAULT_SENDER);
     }
 
     public void setContactRequestDao(ContactRequestDao contactRequestDao) {
