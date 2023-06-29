@@ -127,4 +127,18 @@
 
     <bean id="updateCustomTokenValueJob" class="org.training.job.UpdateCustomTokenValueJob" parent="abstractJobPerformable"/>
 
+    <bean id="producerDao"
+          class="org.training.dao.impl.DefaultProducerDao"
+          parent="abstractItemDao"  />
+
+    <bean id="producerService"
+          class="org.training.service.impl.DefaultProducerService"  />
+
+    <bean id="producerConverter" class="org.training.converters.ProducerConverter"/>
+
+    <bean id="producerFacade"
+          class="org.training.facade.impl.DefaultProducerFacade"/>
+
+    <bean id="concertTourConverter" class="org.training.converters.ConcertTourConverter"/>
+
 </beans>
