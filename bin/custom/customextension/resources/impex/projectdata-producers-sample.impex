@@ -1,0 +1,8 @@
+INSERT_UPDATE Producer; code[unique = true]; firstname ; lastname ;
+                          ; P001                 ; Jhon ; Lock
+                          ; P002                 ; Mike ; Smith
+
+INSERT_UPDATE ConcertTour; code[unique = true]; name     ; description; producer(code)
+                        ; C001                 ; Rock tour ; Legendary rock hits on desert island; P001
+                        ; C002                 ; Classical music tour; World classical hits; P002
+                        ; C003                 ; Dj tour ; Electronic music hits; P002

@@ -20,4 +20,17 @@
         <property name="listProperty" type="java.util.List&lt;Integer&gt;"/>
     </bean>
 
+    <bean class="org.training.data.ConcertTourData">
+        <property name="code" type="String"/>
+        <property name="name" type="String"/>
+        <property name="description" type="String"/>
+    </bean>
+
+    <bean class="org.training.data.ProducerData">
+        <property name="code" type="String"/>
+        <property name="firstname" type="String"/>
+        <property name="lastname" type="String"/>
+        <property name="concertTours" type="java.util.List&lt;org.training.data.ConcertTourData&gt;"/>
+    </bean>
+
 </beans>

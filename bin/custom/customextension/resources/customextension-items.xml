@@ -48,6 +48,10 @@
 				<modifiers read="true" write="true" search="true" optional="true"/>
 			</targetElement>
 		</relation>
+		<relation code="ProducerToConcertTours" localized="false">
+			<sourceElement type="Producer" qualifier="producer" cardinality="one"/>
+			<targetElement type="ConcertTour" qualifier="tours" cardinality="many"/>
+		</relation>
 	</relations>
 
 	<itemtypes>
@@ -176,6 +180,40 @@
 					<defaultvalue>
 						org.training.constraints.NotLoremIpsum.class
 					</defaultvalue>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="Producer">
+			<deployment table="Producer" typecode="30272"/>
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="firstname" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="lastname" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="ConcertTour">
+			<deployment table="ConcertTour" typecode="30273"/>
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+				</attribute>
+				<attribute qualifier="description" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
 			</attributes>
 		</itemtype>
